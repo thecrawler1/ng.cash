@@ -1,0 +1,14 @@
+{
+  "name": "ng.cash-backend",
+  "version": "1.0.0",
+  "description": "Back-end do desafio técnico da NG.CASH",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Alves de Lisboa",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
+}
