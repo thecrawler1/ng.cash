@@ -1,7 +1,7 @@
 import UserDTO from './dtos/UserDTO';
-import Id from './value-objects/Id';
-import Password from './value-objects/Password';
-import Username from './value-objects/Username';
+import Id from './value-objects/id';
+import Username from './value-objects/username';
+import Password from './value-objects/password';
 
 export default class User {
   private constructor(

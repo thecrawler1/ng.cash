@@ -1,5 +1,5 @@
-import InvalidUsernameTypeError from '../errors/InvalidUsernameTypeError';
-import InvalidUsernameLengthError from '../errors/InvalidUsernameLengthError';
+import InvalidUsernameTypeError from './errors/InvalidUsernameTypeError';
+import InvalidUsernameLengthError from './errors/InvalidUsernameLengthError';
 
 export default class Username {
   private static readonly MIN_LENGTH = 3;

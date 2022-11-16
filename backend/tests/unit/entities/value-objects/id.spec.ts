@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import InvalidIdTypeError from '../../../../src/entities/errors/InvalidIdTypeError';
-import InvalidNegativeIdError from '../../../../src/entities/errors/InvalidNegativeIdError';
-import Id from '../../../../src/entities/value-objects/Id';
+import InvalidIdTypeError from '../../../../src/entities/value-objects/id/errors/InvalidIdTypeError';
+import InvalidNegativeIdError from '../../../../src/entities/value-objects/id/errors/InvalidNegativeIdError';
+import Id from '../../../../src/entities/value-objects/id';
 
 describe('Id value object', function () {
   it('should create an id', function () {

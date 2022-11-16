@@ -1,6 +1,6 @@
 import AccountDTO from './dtos/AccountDTO';
-import Id from './value-objects/Id';
-import MonetaryValue from './value-objects/MonetaryValue';
+import Id from './value-objects/id';
+import MonetaryValue from './value-objects/monetary-value';
 
 export default class Account {
   private constructor(

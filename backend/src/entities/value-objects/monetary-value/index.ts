@@ -1,5 +1,5 @@
-import InvalidMonetaryValueTypeError from '../errors/InvalidMonetaryValueTypeError';
-import InvalidNegativeMonetaryValueError from '../errors/InvalidNegativeMonetaryValueError';
+import InvalidMonetaryValueTypeError from './errors/InvalidMonetaryValueTypeError';
+import InvalidNegativeMonetaryValueError from './errors/InvalidNegativeMonetaryValueError';
 
 export default class MonetaryValue {
   private constructor(private readonly _value: number) {}

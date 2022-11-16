@@ -1,6 +1,6 @@
 import TransactionDTO from './dtos/TransactionDTO';
-import Id from './value-objects/Id';
-import MonetaryValue from './value-objects/MonetaryValue';
+import Id from './value-objects/id';
+import MonetaryValue from './value-objects/monetary-value';
 
 export default class Transaction {
   private constructor(

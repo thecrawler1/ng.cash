@@ -1,6 +1,6 @@
-import InvalidPasswordTypeError from '../errors/InvalidPasswordTypeError';
-import InvalidPasswordLengthError from '../errors/InvalidPasswordLengthError';
-import PasswordMissingRequiredCharacterError from '../errors/PasswordMissingRequiredCharacterError';
+import InvalidPasswordTypeError from './errors/InvalidPasswordTypeError';
+import InvalidPasswordLengthError from './errors/InvalidPasswordLengthError';
+import PasswordMissingRequiredCharacterError from './errors/PasswordMissingRequiredCharacterError';
 
 export default class Password {
   private static readonly MIN_LENGTH = 8;

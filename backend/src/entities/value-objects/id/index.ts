@@ -1,5 +1,5 @@
-import InvalidIdTypeError from '../errors/InvalidIdTypeError';
-import InvalidNegativeIdError from '../errors/InvalidNegativeIdError';
+import InvalidIdTypeError from './errors/InvalidIdTypeError';
+import InvalidNegativeIdError from './errors/InvalidNegativeIdError';
 
 export default class Id {
   private constructor(private readonly _value: number) {}
