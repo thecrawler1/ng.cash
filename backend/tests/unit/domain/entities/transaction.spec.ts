@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import Transaction from '../../../../src/domain/entities/Transaction';
+import Transaction from '@domain/entities/Transaction';
 
 describe('Transaction entity', function () {
   it('should create a transaction', function () {

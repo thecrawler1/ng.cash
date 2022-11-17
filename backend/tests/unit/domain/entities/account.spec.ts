@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import Account from '../../../../src/domain/entities/Account';
+import Account from '@domain/entities/Account';
 
 describe('Account entity', function () {
   it('should create an account', function () {

@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import InvalidMonetaryValueTypeError from '../../../../../src/domain/entities/value-objects/monetary-value/errors/InvalidMonetaryValueTypeError';
-import InvalidNegativeMonetaryValueError from '../../../../../src/domain/entities/value-objects/monetary-value/errors/InvalidNegativeMonetaryValueError';
-import MonetaryValue from '../../../../../src/domain/entities/value-objects/monetary-value';
+import InvalidMonetaryValueTypeError from '@domain/entities/value-objects/monetary-value/errors/InvalidMonetaryValueTypeError';
+import InvalidNegativeMonetaryValueError from '@domain/entities/value-objects/monetary-value/errors/InvalidNegativeMonetaryValueError';
+import MonetaryValue from '@domain/entities/value-objects/monetary-value';
 
 describe('MonetaryValue value object', function () {
   it('should create a MonetaryValue', function () {
