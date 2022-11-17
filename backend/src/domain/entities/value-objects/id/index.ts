@@ -26,4 +26,8 @@ export default class Id {
   get value(): number {
     return this._value;
   }
+
+  equals(other: Id): boolean {
+    return this.value === other.value;
+  }
 }

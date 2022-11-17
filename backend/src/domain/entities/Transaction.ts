@@ -1,4 +1,5 @@
 import TransactionDTO from './dtos/TransactionDTO';
+import InvalidTransactionToTheSameAccountError from './errors/InvalidTransactionToTheSameAccountError';
 import Id from './value-objects/id';
 import MonetaryValue from './value-objects/monetary-value';
 
@@ -12,13 +13,21 @@ export default class Transaction {
   ) {}
 
   static create(transactionDTO: TransactionDTO): Transaction {
-    return new Transaction(
-      Id.create(transactionDTO.id),
-      Id.create(transactionDTO.debitedAccountId),
-      Id.create(transactionDTO.creditedAccountId),
-      MonetaryValue.create(transactionDTO.value),
-      transactionDTO.createdAt,
-    );
+    const id = Id.create(transactionDTO.id);
+    const debitedAccountId = Id.create(transactionDTO.debitedAccountId);
+    const creditedAccountId = Id.create(transactionDTO.creditedAccountId);
+    const value = MonetaryValue.create(transactionDTO.value);
+    const { createdAt } = transactionDTO;
+
+    this.validateIfTheAccountsAreDifferents(debitedAccountId, creditedAccountId);
+
+    return new Transaction(id, debitedAccountId, creditedAccountId, value, createdAt);
+  }
+
+  private static validateIfTheAccountsAreDifferents(sourceId: Id, destinationId: Id): void {
+    if (sourceId.equals(destinationId)) {
+      throw new InvalidTransactionToTheSameAccountError();
+    }
   }
 
   toDTO(): TransactionDTO {
