@@ -4,7 +4,7 @@ export default class InvalidTransactionToTheSameAccountError extends Unauthorize
   constructor() {
     super(
       'Invalid transaction with source account equal to destination account',
-      'TRANSACTION_TO_SOURCE_ACCOUNT',
+      'INVALID_TRANSACTION_TO_THE_SAME_ACCOUNT',
     );
   }
 }
