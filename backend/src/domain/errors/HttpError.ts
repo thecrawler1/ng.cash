@@ -1,4 +1,4 @@
-export default class HttpError extends Error {
+export default abstract class HttpError extends Error {
   private readonly _httpStatusCode: number;
   private readonly _messageCode: string;
 
