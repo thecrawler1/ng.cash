@@ -6,7 +6,7 @@ import IGetUserPasswordHashByUsernameRepository from '../interfaces/repositories
 import ILoginService from '../interfaces/services/ILoginService';
 import InvalidCredentialsError from './errors/InvalidCredentialsError';
 import IHashComparer from '../interfaces/services/IHashComparer';
-import IJwtUserEncoder from '../interfaces/services/IJwtUserEncoder';
+import IUserTokenEncoder from '@domain/interfaces/token-manager/IUserTokenEncoder';
 
 export default class LoginService implements ILoginService {
   private static readonly TOKEN_EXPIRATION = 24 * 60 * 60; // one day
@@ -15,14 +15,14 @@ export default class LoginService implements ILoginService {
     private getUserPasswordHashByUsername: IGetUserPasswordHashByUsernameRepository,
     private getUserByUsername: IGetUserByUsernameRepository,
     private hashComparer: IHashComparer,
-    private jwtUserEncoder: IJwtUserEncoder,
+    private userTokenEncoder: IUserTokenEncoder,
   ) {}
 
   async perform(username: Username, password: Password): Promise<{ token: string }> {
     await this.validatePassword(username, password);
 
     const user: User = await this.getUserByUsername.perform(username);
-    const token: string = this.jwtUserEncoder.encode(user, LoginService.TOKEN_EXPIRATION);
+    const token: string = this.userTokenEncoder.encode(user, LoginService.TOKEN_EXPIRATION);
 
     return { token };
   }

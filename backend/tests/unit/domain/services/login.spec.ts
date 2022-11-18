@@ -1,12 +1,11 @@
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import User from '@domain/entities/User';
 import LoginService from '@domain/services/LoginService';
 import MockGetUserByUsernameRepository from './mocks/MockGetUserByUsernameRepository';
 import MockGetUserPasswordHashByUsernameRepository from './mocks/MockGetUserPasswordHashByUsernameRespository';
 import MockHashComparer from './mocks/MockHashComparer';
-import MockJwtUserEncoder from './mocks/MockJwtUserEncoder';
+import MockUserTokenEncoder from './mocks/MockUserTokenEncoder';
 import InvalidCredentialsError from '@domain/services/errors/InvalidCredentialsError';
 import { user } from './mocks/data';
 
@@ -18,19 +17,19 @@ describe('Login service', function () {
   const mockGetUserPasswordHashByUsername = new MockGetUserPasswordHashByUsernameRepository();
   const mockGetUserByUsername = new MockGetUserByUsernameRepository(user);
   const mockHashComparer = new MockHashComparer(true);
-  const mockJwtUserEncoder = new MockJwtUserEncoder();
+  const mockUserTokenEncoder = new MockUserTokenEncoder();
 
   const loginService = new LoginService(
     mockGetUserPasswordHashByUsername,
     mockGetUserByUsername,
     mockHashComparer,
-    mockJwtUserEncoder,
+    mockUserTokenEncoder,
   );
 
   it('should return a token', async function () {
     const result = await loginService.perform(user.username, user.password!);
 
-    expect(result).to.be.deep.equal({ token: mockJwtUserEncoder.fakeToken });
+    expect(result).to.be.deep.equal({ token: mockUserTokenEncoder.fakeToken });
   });
 
   it('should throw an error when the password is incorrect', async function () {

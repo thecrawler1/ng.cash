@@ -4,13 +4,13 @@ import TokenNotProvidedError from '@domain/middlewares/errors/TokenNotProvidedEr
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { user } from '../services/mocks/data';
-import MockJwtUserDecoder from './mocks/MockJwtUserDecoder';
+import MockUserTokenDecoder from './mocks/MockUserTokenDecoder';
 
 chai.use(chaiAsPromised);
 
 describe('Authenticator middleware', function () {
-  const mockJwtUserDecoder = new MockJwtUserDecoder(user);
-  const authenticatorMiddleware = new AuthenticatorMiddleware(mockJwtUserDecoder);
+  const mockUserTokenDecoder = new MockUserTokenDecoder(user);
+  const authenticatorMiddleware = new AuthenticatorMiddleware(mockUserTokenDecoder);
 
   it('should return an user', function () {
     const request: IRequest = { token: 'fake_token' };

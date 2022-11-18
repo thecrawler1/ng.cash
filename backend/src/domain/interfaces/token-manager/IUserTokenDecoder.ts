@@ -1,5 +1,5 @@
 import User from '@domain/entities/User';
 
-export default interface IJwtUserDecoder {
+export default interface IUserTokenDecoder {
   decode(token: string): User;
 }
