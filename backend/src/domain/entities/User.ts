@@ -44,4 +44,8 @@ export default class User {
   get password(): Password | undefined {
     return this._password;
   }
+
+  equals(other: User): boolean {
+    return this.id.equals(other.id);
+  }
 }
