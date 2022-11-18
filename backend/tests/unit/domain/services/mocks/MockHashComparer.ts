@@ -1,5 +1,5 @@
 import Password from '@domain/entities/value-objects/password';
-import IHashComparer from '@domain/interfaces/services/IHashComparer';
+import IHashComparer from '@domain/interfaces/password-hash-manager/IHashComparer';
 
 export default class MockHashComparer implements IHashComparer {
   constructor(public result: boolean) {}

@@ -5,7 +5,7 @@ import IGetUserByUsernameRepository from '../interfaces/repositories/IGetUserByU
 import IGetUserPasswordHashByUsernameRepository from '../interfaces/repositories/IGetUserPasswordHashByUsernameRepository';
 import ILoginService from '../interfaces/services/ILoginService';
 import InvalidCredentialsError from './errors/InvalidCredentialsError';
-import IHashComparer from '../interfaces/services/IHashComparer';
+import IHashComparer from '@domain/interfaces/password-hash-manager/IHashComparer';
 import IUserTokenEncoder from '@domain/interfaces/token-manager/IUserTokenEncoder';
 
 export default class LoginService implements ILoginService {

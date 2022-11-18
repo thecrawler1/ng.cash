@@ -1,5 +1,5 @@
 import Password from '@domain/entities/value-objects/password';
-import IHashGenerator from '@domain/interfaces/services/IHashGenerator';
+import IHashGenerator from '@domain/interfaces/password-hash-manager/IHashGenerator';
 
 export default class MockHashGenerator implements IHashGenerator {
   constructor(public fakePasswordHash = 'fake_password_hash') {}

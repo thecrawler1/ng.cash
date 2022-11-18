@@ -4,7 +4,7 @@ import Username from '../entities/value-objects/username';
 import UsernameIsBeingUsedError from './errors/UsernameIsBeingUsedError';
 import ICreateUserAndAccountRepository from '../interfaces/repositories/ICreateUserAndAccountRepository';
 import ICreateUserService from '../interfaces/services/ICreateUserService';
-import IHashGenerator from '../interfaces/services/IHashGenerator';
+import IHashGenerator from '@domain/interfaces/password-hash-manager/IHashGenerator';
 import ICheckIfUsernameIsBeingUsedRepository from '../interfaces/repositories/ICheckIfUsernameIsBeingUsedRepository';
 
 export default class CreateUserService implements ICreateUserService {
