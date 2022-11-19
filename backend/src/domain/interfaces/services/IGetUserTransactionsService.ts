@@ -5,7 +5,7 @@ export enum TransactionType {
   cashout = 'cash-out',
   cashin = 'cash-in',
   both = 'both',
-};
+}
 
 export type Filters = {
   date?: Date,
