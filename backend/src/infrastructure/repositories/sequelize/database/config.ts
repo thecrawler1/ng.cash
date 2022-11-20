@@ -12,6 +12,7 @@ const config: SequelizeOptions = {
     timezone: 'Z',
   },
   logging: false,
+  models: [__dirname + '/models'],
 };
 
 module.exports = config;
