@@ -1,6 +1,6 @@
-import RequiredPayloadNotProvidedError from '@domain/controllers/errors/RequiredPaylodNotProvidedError';
-import LoginController from '@domain/controllers/LoginController';
-import IRequest from '@domain/interfaces/controller/IRequest';
+import RequiredPayloadNotProvidedError from '../../../../src/domain/controllers/errors/RequiredPaylodNotProvidedError';
+import LoginController from '../../../../src/domain/controllers/LoginController';
+import IRequest from '../../../../src/domain/interfaces/controller/IRequest';
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import MockLoginService from './mocks/MockLoginService';

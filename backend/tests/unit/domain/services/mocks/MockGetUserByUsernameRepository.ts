@@ -1,6 +1,6 @@
-import User from '@domain/entities/User';
-import Username from '@domain/entities/value-objects/username';
-import IGetUserByUsernameRepository from '@domain/interfaces/repositories/IGetUserByUsernameRepository';
+import User from '../../../../../src/domain/entities/User';
+import Username from '../../../../../src/domain/entities/value-objects/username';
+import IGetUserByUsernameRepository from '../../../../../src/domain/interfaces/repositories/IGetUserByUsernameRepository';
 
 export default class MockGetUserByUsernameRepository implements IGetUserByUsernameRepository {
   constructor(public fakeUser: User) {}

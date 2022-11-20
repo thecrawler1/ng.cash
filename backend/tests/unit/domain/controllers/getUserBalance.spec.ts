@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import GetUserBalanceController from '@domain/controllers/GetUserBalanceController';
-import IRequest from '@domain/interfaces/controller/IRequest';
+import GetUserBalanceController from '../../../../src/domain/controllers/GetUserBalanceController';
+import IRequest from '../../../../src/domain/interfaces/controller/IRequest';
 import MockGetUserBalanceService from './mocks/MockGetUserBalanceService';
 import { account, user } from '../services/mocks/data';
 

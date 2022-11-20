@@ -1,12 +1,12 @@
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import LoginService from '@domain/services/LoginService';
+import LoginService from '../../../../src/domain/services/LoginService';
 import MockGetUserByUsernameRepository from './mocks/MockGetUserByUsernameRepository';
 import MockGetUserPasswordHashByUsernameRepository from './mocks/MockGetUserPasswordHashByUsernameRespository';
 import MockHashComparer from './mocks/MockHashComparer';
 import MockUserTokenEncoder from './mocks/MockUserTokenEncoder';
-import InvalidCredentialsError from '@domain/services/errors/InvalidCredentialsError';
+import InvalidCredentialsError from '../../../../src/domain/services/errors/InvalidCredentialsError';
 import { user } from './mocks/data';
 
 chai.use(chaiAsPromised);

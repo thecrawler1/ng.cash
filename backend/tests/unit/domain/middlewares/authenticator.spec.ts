@@ -1,6 +1,6 @@
-import IRequest from '@domain/interfaces/middleware/IRequest';
-import AuthenticatorMiddleware from '@domain/middlewares/AuthenticatorMiddleware';
-import TokenNotProvidedError from '@domain/middlewares/errors/TokenNotProvidedError';
+import IRequest from '../../../../src/domain/interfaces/middleware/IRequest';
+import AuthenticatorMiddleware from '../../../../src/domain/middlewares/AuthenticatorMiddleware';
+import TokenNotProvidedError from '../../../../src/domain/middlewares/errors/TokenNotProvidedError';
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { user } from '../services/mocks/data';

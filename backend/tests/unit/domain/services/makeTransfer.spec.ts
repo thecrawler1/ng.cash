@@ -1,15 +1,15 @@
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import MakeTransferService from '@domain/services/MakeTransferService';
+import MakeTransferService from '../../../../src/domain/services/MakeTransferService';
 import { account, transaction, user } from './mocks/data';
 import MockGetAccountById from './mocks/MockGetAccountByIdRepository';
 import MockGetUserByUsernameRepository from './mocks/MockGetUserByUsernameRepository';
 import MockMakeTransferRepository from './mocks/MockMakeTransferRepository';
-import User from '@domain/entities/User';
-import InvalidTransferToYourselfError from '@domain/services/errors/InvalidTransferToYourselfError';
-import Account from '@domain/entities/Account';
-import InsufficientBalanceError from '@domain/services/errors/InsufficientBalanceError';
+import User from '../../../../src/domain/entities/User';
+import InvalidTransferToYourselfError from '../../../../src/domain/services/errors/InvalidTransferToYourselfError';
+import Account from '../../../../src/domain/entities/Account';
+import InsufficientBalanceError from '../../../../src/domain/services/errors/InsufficientBalanceError';
 
 chai.use(chaiAsPromised);
 

@@ -1,10 +1,10 @@
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-import CreateUserController from '@domain/controllers/CreateUserController';
+import CreateUserController from '../../../../src/domain/controllers/CreateUserController';
 import MockCreateUserService from './mocks/MockCreateUserService';
 import { user } from '../services/mocks/data';
-import IRequest from '@domain/interfaces/controller/IRequest';
-import RequiredPayloadNotProvidedError from '@domain/controllers/errors/RequiredPaylodNotProvidedError';
+import IRequest from '../../../../src/domain/interfaces/controller/IRequest';
+import RequiredPayloadNotProvidedError from '../../../../src/domain/controllers/errors/RequiredPaylodNotProvidedError';
 
 chai.use(chaiAsPromised);
 

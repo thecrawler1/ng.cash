@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import Username from '@domain/entities/value-objects/username';
-import InvalidUsernameTypeError from '@domain/entities/value-objects/username/errors/InvalidUsernameTypeError';
-import InvalidUsernameLengthError from '@domain/entities/value-objects/username/errors/InvalidUsernameLengthError';
+import Username from '../../../../../src/domain/entities/value-objects/username';
+import InvalidUsernameTypeError from '../../../../../src/domain/entities/value-objects/username/errors/InvalidUsernameTypeError';
+import InvalidUsernameLengthError from '../../../../../src/domain/entities/value-objects/username/errors/InvalidUsernameLengthError';
 
 describe('Username value object', function () {
   it('should create an username', function () {

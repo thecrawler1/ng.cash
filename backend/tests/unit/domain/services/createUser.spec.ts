@@ -1,11 +1,11 @@
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import CreateUserService from '@domain/services/CreateUserService';
+import CreateUserService from '../../../../src/domain/services/CreateUserService';
 import MockCheckIfUsernameIsBeingUsedRepository from './mocks/MockCheckIfUsernameIsBeingUsedRepository';
 import MockCreateUserAndAccountRepository from './mocks/MockCreateUserAndAccountRepository';
 import MockHashGenerator from './mocks/MockHashGenerator';
-import UsernameIsBeingUsedError from '@domain/services/errors/UsernameIsBeingUsedError';
+import UsernameIsBeingUsedError from '../../../../src/domain/services/errors/UsernameIsBeingUsedError';
 import { user } from './mocks/data';
 
 chai.use(chaiAsPromised);

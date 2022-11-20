@@ -1,7 +1,7 @@
-import Transaction from '@domain/entities/Transaction';
-import Id from '@domain/entities/value-objects/id';
-import { Filters } from '@domain/interfaces/services/IGetUserTransactionsService';
-import IGetTransactionsByAccountIdRepository from '@domain/interfaces/repositories/IGetTransactionsByAccountIdRepository';
+import Transaction from '../../../../../src/domain/entities/Transaction';
+import Id from '../../../../../src/domain/entities/value-objects/id';
+import { Filters } from '../../../../../src/domain/interfaces/services/IGetUserTransactionsService';
+import IGetTransactionsByAccountIdRepository from '../../../../../src/domain/interfaces/repositories/IGetTransactionsByAccountIdRepository';
 
 export default class MockGetTransactionsByAccountIdRepository implements IGetTransactionsByAccountIdRepository {
   constructor(public fakeTransactions: Transaction[]) {}

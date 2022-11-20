@@ -1,6 +1,6 @@
-import User from '@domain/entities/User';
-import MonetaryValue from '@domain/entities/value-objects/monetary-value';
-import IGetUserBalanceService from '@domain/interfaces/services/IGetUserBalanceService';
+import User from '../../../../../src/domain/entities/User';
+import MonetaryValue from '../../../../../src/domain/entities/value-objects/monetary-value';
+import IGetUserBalanceService from '../../../../../src/domain/interfaces/services/IGetUserBalanceService';
 
 export default class MockGetUserBalanceService implements IGetUserBalanceService {
   constructor(public fakeBalance: MonetaryValue) {}

@@ -1,6 +1,6 @@
-import RequiredPayloadNotProvidedError from '@domain/controllers/errors/RequiredPaylodNotProvidedError';
-import MakeTransferController from '@domain/controllers/MakeTransferController';
-import IRequest from '@domain/interfaces/controller/IRequest';
+import RequiredPayloadNotProvidedError from '../../../../src/domain/controllers/errors/RequiredPaylodNotProvidedError';
+import MakeTransferController from '../../../../src/domain/controllers/MakeTransferController';
+import IRequest from '../../../../src/domain/interfaces/controller/IRequest';
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { transaction, user } from '../services/mocks/data';

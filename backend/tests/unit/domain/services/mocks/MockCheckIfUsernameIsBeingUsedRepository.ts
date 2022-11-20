@@ -1,5 +1,5 @@
-import Username from '@domain/entities/value-objects/username';
-import ICheckIfUsernameIsBeingUsedRepository from '@domain/interfaces/repositories/ICheckIfUsernameIsBeingUsedRepository';
+import Username from '../../../../../src/domain/entities/value-objects/username';
+import ICheckIfUsernameIsBeingUsedRepository from '../../../../../src/domain/interfaces/repositories/ICheckIfUsernameIsBeingUsedRepository';
 
 export default class MockCheckIfUsernameIsBeingUsedRepository implements ICheckIfUsernameIsBeingUsedRepository {
   constructor(public result: boolean) {}

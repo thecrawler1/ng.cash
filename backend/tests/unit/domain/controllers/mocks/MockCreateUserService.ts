@@ -1,7 +1,7 @@
-import User from '@domain/entities/User';
-import Password from '@domain/entities/value-objects/password';
-import Username from '@domain/entities/value-objects/username';
-import ICreateUserService from '@domain/interfaces/services/ICreateUserService';
+import User from '../../../../../src/domain/entities/User';
+import Password from '../../../../../src/domain/entities/value-objects/password';
+import Username from '../../../../../src/domain/entities/value-objects/username';
+import ICreateUserService from '../../../../../src/domain/interfaces/services/ICreateUserService';
 
 export default class MockCreateUserService implements ICreateUserService {
   constructor(public fakeUser: User) {}

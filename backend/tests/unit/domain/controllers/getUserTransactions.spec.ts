@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import GetUserTransactionsController from '@domain/controllers/GetUserTransactionsController';
-import IRequest from '@domain/interfaces/controller/IRequest';
+import GetUserTransactionsController from '../../../../src/domain/controllers/GetUserTransactionsController';
+import IRequest from '../../../../src/domain/interfaces/controller/IRequest';
 import MockGetUserTransactionsService from './mocks/MockGetUserTransactionsService';
 import { transaction, user } from '../services/mocks/data';
 

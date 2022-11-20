@@ -1,7 +1,7 @@
 import MockGetTransactionsByAccountIdRepository from './mocks/MockGetTransactionsByAccountIdRepository';
 import { transaction, user } from './mocks/data';
-import GetUserTransactionsService from '@domain/services/GetUserTransactionsService';
-import { Filters, TransactionType } from '@domain/interfaces/services/IGetUserTransactionsService';
+import GetUserTransactionsService from '../../../../src/domain/services/GetUserTransactionsService';
+import { Filters, TransactionType } from '../../../../src/domain/interfaces/services/IGetUserTransactionsService';
 import { expect } from 'chai';
 
 describe('Get user transactions service', function () {

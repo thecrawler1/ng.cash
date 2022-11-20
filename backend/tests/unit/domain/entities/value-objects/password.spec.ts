@@ -1,8 +1,8 @@
 import { expect } from 'chai';
-import InvalidPasswordLengthError from '@domain/entities/value-objects/password/errors/InvalidPasswordLengthError';
-import InvalidPasswordTypeError from '@domain/entities/value-objects/password/errors/InvalidPasswordTypeError';
-import PasswordMissingRequiredCharacterError from '@domain/entities/value-objects/password/errors/PasswordMissingRequiredCharacterError';
-import Password from '@domain/entities/value-objects/password';
+import InvalidPasswordLengthError from '../../../../../src/domain/entities/value-objects/password/errors/InvalidPasswordLengthError';
+import InvalidPasswordTypeError from '../../../../../src/domain/entities/value-objects/password/errors/InvalidPasswordTypeError';
+import PasswordMissingRequiredCharacterError from '../../../../../src/domain/entities/value-objects/password/errors/PasswordMissingRequiredCharacterError';
+import Password from '../../../../../src/domain/entities/value-objects/password';
 
 describe('Password value object', function () {
   it('should create a password', function () {

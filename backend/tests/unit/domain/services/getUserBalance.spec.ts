@@ -1,4 +1,4 @@
-import GetUserBalanceService from '@domain/services/GetUserBalanceService';
+import GetUserBalanceService from '../../../../src/domain/services/GetUserBalanceService';
 import { expect } from 'chai';
 import { account, user } from './mocks/data';
 import MockGetAccountById from './mocks/MockGetAccountByIdRepository';

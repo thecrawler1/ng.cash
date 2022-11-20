@@ -1,5 +1,5 @@
-import Username from '@domain/entities/value-objects/username';
-import IGetUserPasswordHashByUsernameRepository from '@domain/interfaces/repositories/IGetUserPasswordHashByUsernameRepository';
+import Username from '../../../../../src/domain/entities/value-objects/username';
+import IGetUserPasswordHashByUsernameRepository from '../../../../../src/domain/interfaces/repositories/IGetUserPasswordHashByUsernameRepository';
 
 export default class MockGetUserPasswordHashByUsernameRepository implements IGetUserPasswordHashByUsernameRepository {
   constructor(public fakePasswordHash = 'fake_password_hash') {}

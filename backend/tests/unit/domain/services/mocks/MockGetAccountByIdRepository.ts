@@ -1,6 +1,6 @@
-import Account from '@domain/entities/Account';
-import Id from '@domain/entities/value-objects/id';
-import IGetAccountByIdRepository from '@domain/interfaces/repositories/IGetAccountByIdRepository';
+import Account from '../../../../../src/domain/entities/Account';
+import Id from '../../../../../src/domain/entities/value-objects/id';
+import IGetAccountByIdRepository from '../../../../../src/domain/interfaces/repositories/IGetAccountByIdRepository';
 
 export default class MockGetAccountById implements IGetAccountByIdRepository {
   constructor(public fakeAccount: Account) {}

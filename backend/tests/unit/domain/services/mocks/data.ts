@@ -1,6 +1,6 @@
-import Account from '@domain/entities/Account';
-import Transaction from '@domain/entities/Transaction';
-import User from '@domain/entities/User';
+import Account from '../../../../../src/domain/entities/Account';
+import Transaction from '../../../../../src/domain/entities/Transaction';
+import User from '../../../../../src/domain/entities/User';
 
 export const user = User.create({
   id: 1,
