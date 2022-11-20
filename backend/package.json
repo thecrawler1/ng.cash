@@ -4,6 +4,7 @@
   "description": "Back-end do desafio técnico da NG.CASH",
   "main": "./src/infrastructure/server/express/server.ts",
   "scripts": {
+    "build": "rm -rf build/ && npx tsc",
     "start": "ts-node .",
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.spec.ts'",
     "lint": "eslint ./src --ext .ts"
