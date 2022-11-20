@@ -1,15 +1,17 @@
-import { Sequelize } from 'sequelize-typescript';
+import { SequelizeOptions } from 'sequelize-typescript';
 import 'dotenv/config';
 
-const sequelize = new Sequelize({
-  dialect: 'postgres',
-  database: process.env.DB_NAME || 'ngcash',
-  username: process.env.DB_USERNAME || 'ngcash',
-  password: process.env.DB_PASSWORD || '123456',
+const config: SequelizeOptions = {
+  username: process.env.DB_USER || 'ngcash',
+  password: process.env.DB_PASS || '123456',
+  database: 'ngcash',
   host: process.env.DB_HOST || 'localhost',
   port: Number(process.env.DB_PORT) || 3002,
-  models: [__dirname + '/models'],
+  dialect: 'postgres',
+  dialectOptions: {
+    timezone: 'Z',
+  },
   logging: false,
-});
+};
 
-export default sequelize;
+module.exports = config;
