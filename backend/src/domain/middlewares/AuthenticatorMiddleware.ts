@@ -9,18 +9,14 @@ import UserDTO from '@domain/entities/dtos/UserDTO';
 export default class AuthenticatorMiddleware implements IMiddleware {
   constructor(private userTokenDecoder: IUserTokenDecoder) {}
 
-  handle(request: IRequest): IResponse {
-    AuthenticatorMiddleware.validateRequest(request);
-
-    const user: User = this.userTokenDecoder.decode(request.token);
-    const userDTO: UserDTO = user.toDTO();
-
-    return { body: { userDTO } };
-  }
-
-  private static validateRequest({ token }: IRequest): void {
+  handle({ token }: IRequest): IResponse {
     if (!token) {
       throw new TokenNotProvidedError();
     }
+
+    const user: User = this.userTokenDecoder.decode(token);
+    const userDTO: UserDTO = user.toDTO();
+
+    return { body: { userDTO } };
   }
 }

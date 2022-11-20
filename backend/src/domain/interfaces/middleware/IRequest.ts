@@ -1,3 +1,3 @@
 export default interface IRequest {
-  token: string,
+  token?: string,
 }
