@@ -3,6 +3,8 @@ import { Sequelize } from 'sequelize-typescript';
 import cors from 'cors';
 import 'express-async-errors';
 
+import ErrorMiddlewareAdapter from '@infrastructure/adapters/express/ErrorMiddlewareAdapter';
+import ErrorHandlerMiddleware from '@domain/middlewares/ErrorHandlerMiddleware';
 import sequelize from '@infrastructure/repositories/sequelize/database'
 
 export default class App {
@@ -14,10 +16,16 @@ export default class App {
     this._database = sequelize;
 
     this.config();
+    this.addErrorHandler();
   }
 
   private config(): void {
     this.app.use(cors());
+  }
+
+  private addErrorHandler(): void {
+    const errorHandler = ErrorMiddlewareAdapter.adapt(new ErrorHandlerMiddleware())
+    this.app.use(errorHandler);
   }
 
   start(port: number | string): void {
