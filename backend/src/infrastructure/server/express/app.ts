@@ -1,5 +1,6 @@
 import express, { Express } from 'express';
 import { Sequelize } from 'sequelize-typescript';
+import cors from 'cors';
 import 'express-async-errors';
 
 import sequelize from '@infrastructure/repositories/sequelize/database'
@@ -11,6 +12,12 @@ export default class App {
   constructor() {
     this._app = express();
     this._database = sequelize;
+
+    this.config();
+  }
+
+  private config(): void {
+    this.app.use(cors());
   }
 
   start(port: number | string): void {
