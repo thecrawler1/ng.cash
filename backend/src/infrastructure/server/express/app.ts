@@ -6,6 +6,7 @@ import 'express-async-errors';
 import ErrorMiddlewareAdapter from '@infrastructure/adapters/express/ErrorMiddlewareAdapter';
 import ErrorHandlerMiddleware from '@domain/middlewares/ErrorHandlerMiddleware';
 import sequelize from '@infrastructure/repositories/sequelize/database'
+import loginRouter from './routers/loginRouter';
 import userRouter from './routers/userRouter';
 
 export default class App {
@@ -27,6 +28,7 @@ export default class App {
   }
 
   private addRouters(): void {
+    this.app.use('/login', loginRouter);
     this.app.use('/users', userRouter);
   }
 
