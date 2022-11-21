@@ -15,9 +15,9 @@ export default class Account extends Model {
   @HasOne(() => User)
   user: User;
 
-  @HasMany(() => Transaction)
+  @HasMany(() => Transaction, 'debitedAccountId')
   debitedTransactions: Transaction[]
 
-  @HasMany(() => Transaction)
+  @HasMany(() => Transaction, 'creditedAccountId')
   creditedTransactions: Transaction[]
 }

@@ -7,14 +7,14 @@ export default class Transaction extends Model {
   @Column
   debitedAccountId: number;
 
-  @BelongsTo(() => Account)
+  @BelongsTo(() => Account, 'debitedAccountId')
   debitedAccount: Account;
 
   @ForeignKey(() => Account)
   @Column
   creditedAccountId: number;
 
-  @BelongsTo(() => Account)
+  @BelongsTo(() => Account, 'creditedAccountId')
   creditedAccount: Account;
 
   @Column({ type: DataType.DECIMAL(12, 2) })
