@@ -1,4 +1,4 @@
-import { Table, Model, Column, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import { Table, Model, Column, ForeignKey, BelongsTo, Default, DataType } from 'sequelize-typescript';
 import Account from './Account';
 
 @Table({ timestamps: false })
@@ -16,4 +16,11 @@ export default class Transaction extends Model {
 
   @BelongsTo(() => Account)
   creditedAccount: Account;
+
+  @Column({ type: DataType.DECIMAL(12, 2) })
+  value: number;
+
+  @Default(new Date())
+  @Column
+  createdAt: Date;
 }
