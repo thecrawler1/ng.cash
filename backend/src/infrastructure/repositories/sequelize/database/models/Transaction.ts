@@ -25,7 +25,7 @@ export default class Transaction extends Model {
     this.setDataValue('value', value);
   }
 
-  @Default(new Date())
+  @Default(DataType.NOW)
   @Column
   createdAt: Date;
 }
