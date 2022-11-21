@@ -9,7 +9,7 @@ export default class MiddlewareAdapter {
       const request: IRequest = { token: req.headers.authorization };
       const response: IResponse = middleware.handle(request);
 
-      req.body = response.body;
+      Object.assign(req.body, response.body);
 
       next();
     };
