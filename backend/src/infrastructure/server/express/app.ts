@@ -8,6 +8,7 @@ import ErrorHandlerMiddleware from '@domain/middlewares/ErrorHandlerMiddleware';
 import sequelize from '@infrastructure/repositories/sequelize/database'
 import loginRouter from './routers/loginRouter';
 import userRouter from './routers/userRouter';
+import transactionRouter from './routers/transactionRouter';
 
 export default class App {
   private readonly _app: Express;
@@ -30,6 +31,7 @@ export default class App {
   private addRouters(): void {
     this.app.use('/login', loginRouter);
     this.app.use('/users', userRouter);
+    this.app.use('/transactions', transactionRouter);
   }
 
   private addErrorHandler(): void {
