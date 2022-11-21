@@ -20,11 +20,12 @@ export default class GetUserTransactionsController implements IController {
   }
 
   private static createFilters({ query }: IRequest): Filters {
-    const date = query.date ? new Date(query.date) : undefined;
+    const startDate = query.startDate ? new Date(query.startDate) : undefined;
+    const endDate = query.endDate ? new Date(query.endDate) : undefined;
     const transactionType = query.transactionType in TransactionType
       ? query.transactionType as TransactionType
       : TransactionType.both;
 
-    return { date, transactionType };
+    return { startDate, endDate, transactionType };
   }
 }

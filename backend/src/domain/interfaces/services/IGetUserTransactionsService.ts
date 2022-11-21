@@ -2,13 +2,14 @@ import Transaction from '@domain/entities/Transaction';
 import User from '@domain/entities/User';
 
 export enum TransactionType {
-  cashout = 'cash-out',
-  cashin = 'cash-in',
+  cashout = 'cashout',
+  cashin = 'cashin',
   both = 'both',
 }
 
 export type Filters = {
-  date?: Date,
+  startDate?: Date,
+  endDate?: Date,
   transactionType: TransactionType,
 };
 
