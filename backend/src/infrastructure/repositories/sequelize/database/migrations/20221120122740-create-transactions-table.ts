@@ -19,7 +19,7 @@ export default {
           key: 'id',
         },
       },
-      creditedAccontId: {
+      creditedAccountId: {
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
