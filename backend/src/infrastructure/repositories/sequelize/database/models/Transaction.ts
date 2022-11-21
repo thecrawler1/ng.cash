@@ -18,7 +18,12 @@ export default class Transaction extends Model {
   creditedAccount: Account;
 
   @Column({ type: DataType.DECIMAL(12, 2) })
-  value: number;
+  get value(): number {
+    return parseFloat(this.getDataValue('value'));
+  }
+  set value(value: number) {
+    this.setDataValue('value', value);
+  }
 
   @Default(new Date())
   @Column

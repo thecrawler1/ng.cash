@@ -5,7 +5,12 @@ import Transaction from './Transaction';
 @Table({ timestamps: false })
 export default class Account extends Model {
   @Column({ type: DataType.DECIMAL(12, 2) })
-  balance: number;
+  get balance(): number {
+    return parseFloat(this.getDataValue('balance'));
+  }
+  set balance(value: number) {
+    this.setDataValue('balance', value);
+  }
 
   @HasOne(() => User)
   user: User;
