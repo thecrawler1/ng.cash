@@ -40,9 +40,9 @@ export default class GetTransactionByAccountIdRepository implements IGetTransact
       .filter((transaction) => {
         switch (filters.transactionType) {
           case TransactionType.cashout:
-            return transaction.debitedAccountId === accountId;
+            return transaction.debitedAccountId.equals(accountId);
           case TransactionType.cashin:
-            return transaction.creditedAccountId === accountId;
+            return transaction.creditedAccountId.equals(accountId);
           default:
             return true;
         }
