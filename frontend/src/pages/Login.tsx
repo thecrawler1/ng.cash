@@ -1,4 +1,4 @@
-import { useState, useEffect, MouseEventHandler } from 'react';
+import { useState, MouseEventHandler } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from './Loading';
 import * as authenticator from '../services/authenticator';
@@ -8,6 +8,7 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [failedTryLogin, setFailedTryLogin] = useState(false);
 
   const login: MouseEventHandler = async (event) => {
@@ -15,17 +16,18 @@ function Login() {
 
     setIsLoading(true);
 
-    const { success } = await authenticator.login(username, password);
+    const { success, errorMessage } = await authenticator.login(username, password);
 
-    if (success) navigate('/');
-    else setFailedTryLogin(true);
+    if (success) {
+      navigate('/');
+    } else {
+      setPassword('');
+      setErrorMessage(errorMessage!);
+      setFailedTryLogin(true);
+    }
 
     setIsLoading(false);
   }
-
-  useEffect(() => {
-    setFailedTryLogin(false);
-  }, [username, password]);
 
   return isLoading
     ? <Loading />
@@ -35,7 +37,7 @@ function Login() {
           <form>
             <h1>Faça seu login</h1>
             { failedTryLogin &&
-              <p>Usuário ou senha incorretos</p>
+              <p>{ errorMessage }</p>
             }
             <input
               type="text"
