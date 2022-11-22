@@ -1,4 +1,3 @@
-import User from '@domain/entities/User';
 import Password from '@domain/entities/value-objects/password';
 import Username from '@domain/entities/value-objects/username';
 import IController from '@domain/interfaces/controller/IController';
@@ -16,9 +15,9 @@ export default class CreateUserController implements IController {
 
     const username: Username = Username.create(request.payload.username);
     const password: Password = Password.create(request.payload.password);
-    const user: User = await this.createUser.perform(username, password);
+    const { token } = await this.createUser.perform(username, password);
 
-    return created(user.toDTO());
+    return created({ token });
   }
 
   private static validateRequest({ payload }: IRequest): void {

@@ -9,8 +9,6 @@ import IHashComparer from '@domain/interfaces/password-hash-manager/IHashCompare
 import IUserTokenEncoder from '@domain/interfaces/token-manager/IUserTokenEncoder';
 
 export default class LoginService implements ILoginService {
-  private static readonly TOKEN_EXPIRATION = 24 * 60 * 60; // one day
-
   constructor(
     private getUserPasswordHashByUsername: IGetUserPasswordHashByUsernameRepository,
     private getUserByUsername: IGetUserByUsernameRepository,
@@ -22,7 +20,7 @@ export default class LoginService implements ILoginService {
     await this.validatePassword(username, password);
 
     const user: User = await this.getUserByUsername.perform(username);
-    const token: string = this.userTokenEncoder.encode(user, LoginService.TOKEN_EXPIRATION);
+    const token: string = this.userTokenEncoder.encode(user);
 
     return { token };
   }

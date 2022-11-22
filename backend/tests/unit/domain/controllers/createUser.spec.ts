@@ -9,7 +9,7 @@ import RequiredPayloadNotProvidedError from '../../../../src/domain/controllers/
 chai.use(chaiAsPromised);
 
 describe('Create user controlle', function () {
-  const mockCreateUserService = new MockCreateUserService(user);
+  const mockCreateUserService = new MockCreateUserService();
   const createUserController = new CreateUserController(mockCreateUserService);
 
   it('should return an user and a created status code', async function () {
@@ -20,7 +20,7 @@ describe('Create user controlle', function () {
     };
     const result = await createUserController.handle(request);
 
-    expect(result).to.be.deep.equal({ statusCode: 201, data: user.toDTO() });
+    expect(result).to.be.deep.equal({ statusCode: 201, data: { token: 'fake_token' } });
   });
 
   it('should thrown an erro when the username is not provided', async function () {
