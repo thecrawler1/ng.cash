@@ -3,6 +3,7 @@ import User from "./interfaces/User";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NewAccount from "./pages/NewAccount";
+import NotFound from "./pages/NotFound";
 import { getUser } from "./services/authenticator";
 
 export default createBrowserRouter([
@@ -27,6 +28,10 @@ export default createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: '*',
+        element: <NotFound />
       },
     ],
   },
