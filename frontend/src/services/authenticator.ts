@@ -27,3 +27,24 @@ export async function login(username: string, password: string): Promise<{ succe
     return { success: false, errorMessage: uiErrorMessage };
   }
 }
+
+export async function newAccount(username: string, password: string, confirmPassword: string): Promise<{ success: boolean, errorMessage?: string }> {
+  if (password !== confirmPassword) {
+    return { success: false, errorMessage: 'As senhas não coincidem.' };
+  }
+
+  try {
+    const response = await api.post('/users', { username, password });
+
+    setToken(response.data.token);
+
+    return { success: true };
+  } catch (error: any) {
+    const { messageCode, message } = getMessagesFromAxiosError(error);
+    const uiErrorMessage = getUIErrorMessage(messageCode);
+
+    console.error(messageCode, message);
+
+    return { success: false, errorMessage: uiErrorMessage };
+  }
+}
