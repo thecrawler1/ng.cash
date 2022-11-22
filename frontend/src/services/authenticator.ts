@@ -1,4 +1,6 @@
+import jwtDecode from 'jwt-decode';
 import api, { setToken } from './api';
+import User from '../interfaces/User';
 import getUIErrorMessage from '../utils/getUIErrorMessage';
 
 function getMessagesFromAxiosError(error: any): { message?: string, messageCode?: string } {
@@ -47,4 +49,26 @@ export async function newAccount(username: string, password: string, confirmPass
 
     return { success: false, errorMessage: uiErrorMessage };
   }
+}
+
+export async function getUser(): Promise<User | null> {
+  try {
+    const token = localStorage.getItem('token');
+
+    await validateToken(token);
+
+    return jwtDecode<User>(token!);
+  } catch (error) {
+    console.error(error);
+
+    return null;
+  }
+}
+
+export async function validateToken(token: string | null): Promise<void> {
+  if (!token) throw new Error('Token not found');
+
+  const response = await api.post('/auth/token', { token });
+
+  if (!response.data.isValid) throw new Error('Invalid token');
 }

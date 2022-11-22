@@ -1,6 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
+import User from "./interfaces/User";
 import Login from "./pages/Login";
 import NewAccount from "./pages/NewAccount";
+import { getUser } from "./services/authenticator";
 
 export default createBrowserRouter([
   {
@@ -10,5 +12,17 @@ export default createBrowserRouter([
   {
     path: '/new-account',
     element: <NewAccount />,
+  },
+  {
+    path: '*',
+    loader: async () => {
+      const user: User | null = await getUser();
+
+      if (!user) throw redirect('/login');
+
+      return user;
+    },
+    children: [
+    ],
   },
 ]);
