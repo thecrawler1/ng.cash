@@ -3,6 +3,7 @@ const errors: { [key: string]: string } = {
   INVALID_PASSWORD_LENGTH: 'A senha deve ter entre 8 e 16 caracteres.',
   PASSWORD_MISSING_REQUIRED_CHARACTER: 'A senha deve ter pelo menos um número e uma letra maiúscula.',
   USERNAME_IS_BEING_USED: 'Este nome de usuário já está em uso.',
+  REQUIRED_PAYLOAD_NOT_PROVIDED: 'Todos os campos devem ser preenchidos.',
 };
 
 export default function getUIErrorMessage(messageCode?: string) {
