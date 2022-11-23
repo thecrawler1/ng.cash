@@ -1,6 +1,5 @@
 import { useState, MouseEventHandler } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Loading from './Loading';
 import * as requester from '../services/requests';
 
 function Login() {
@@ -29,38 +28,52 @@ function Login() {
     setIsLoading(false);
   }
 
-  return isLoading
-    ? <Loading />
-    : (
-      <main>
-        <section>
-          <form>
-            <h1>Faça seu login</h1>
-            { failedTryLogin &&
-              <p>{ errorMessage }</p>
-            }
-            <input
-              type="text"
-              placeholder="Usuário"
-              value={ username }
-              onChange={ ({ target: { value } }) => setUsername(value) }
-            />
-            <input
-              type="password"
-              placeholder="Senha"
-              value={ password }
-              onChange={ ({ target: { value } }) => setPassword(value) }
-            />
-            <button onClick={ login }>
-              Continuar
-            </button>
-          </form>
-        </section>
-        <section>
-          <Link to="/new-account">Ainda não sou cliente</Link>
-        </section>
-      </main>
-    );
+  return (
+    <main className="container">
+      <div className="d-flex justify-content-center align-items-center" style={{minHeight: '100vh'}}>
+        <div style={{width: '350px'}}>
+          <div className="card">
+            <div className="card-body">
+              <h4 className="card-title mb-4">Faça seu login</h4>
+              <section>
+                <form>
+                  {failedTryLogin && <div className="alert alert-danger">{ errorMessage }</div>}
+                  <input
+                    className="form-control mb-3"
+                    type="text"
+                    placeholder="Usuário"
+                    value={ username }
+                    onChange={ ({ target: { value } }) => setUsername(value) }
+                  />
+                  <input
+                    className="form-control mb-4"
+                    type="password"
+                    placeholder="Senha"
+                    value={ password }
+                    onChange={ ({ target: { value } }) => setPassword(value) }
+                  />
+                  <div className="d-grid mb-3">
+                    { isLoading ? (
+                        <button className="btn btn-dark" disabled>
+                          <span className="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>
+                          Carregando...
+                        </button>
+                      ) : (
+                        <button className="btn btn-dark" onClick={ login }>Continuar</button>
+                      )
+                    }
+                  </div>
+                </form>
+              </section>
+              <section className="text-center">
+                <Link to="/new-account">Ainda não sou cliente</Link>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
 }
 
 export default Login;
