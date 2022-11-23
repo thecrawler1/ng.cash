@@ -1,8 +1,8 @@
+import { Navigate } from "react-router-dom";
 import { createBrowserRouter, redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NewAccount from "./pages/NewAccount";
-import NotFound from "./pages/NotFound";
 import { getIsLoggedIn } from "./services/requests";
 
 export default createBrowserRouter([
@@ -28,7 +28,7 @@ export default createBrowserRouter([
       },
       {
         path: '*',
-        element: <NotFound />
+        element: <Navigate to="/" />,
       },
     ],
   },
