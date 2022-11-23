@@ -3,6 +3,7 @@ import { createBrowserRouter, redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NewAccount from "./pages/NewAccount";
+import NewTransfer from "./pages/NewTransfer";
 import { getIsLoggedIn } from "./services/requests";
 
 export default createBrowserRouter([
@@ -24,7 +25,11 @@ export default createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
+      },
+      {
+        path: 'new-transfer',
+        element: <NewTransfer />,
       },
       {
         path: '*',
