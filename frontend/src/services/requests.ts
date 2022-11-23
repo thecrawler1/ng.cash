@@ -80,3 +80,9 @@ export async function validateToken(token: string | null): Promise<void> {
 
   setToken(token);
 }
+
+export async function getBalance(): Promise<number> {
+  const { data } = await api.get('/users/balance');
+
+  return data.balance;
+}
