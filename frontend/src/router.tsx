@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { createBrowserRouter, redirect } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NewAccount from "./pages/NewAccount";
@@ -16,7 +17,8 @@ export default createBrowserRouter([
     element: <NewAccount />,
   },
   {
-    path: '*',
+    path: '/',
+    element: <MainLayout />,
     loader: async () => {
       const isLoggedIn: boolean = await getIsLoggedIn();
 

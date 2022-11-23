@@ -1,44 +1,23 @@
-import { useEffect, useState } from "react";
 import User from "../interfaces/User";
-import { getBalance, getUser } from "../services/requests";
-import Loading from "./Loading";
+import TransactionsTable from "../components/TransactionsTable";
+import BalanceCard from "../components/BalanceCard";
+import { useOutletContext } from "react-router-dom";
 
 function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState<User>();
-  const [balance, setBalance] = useState(0);
+  const user = useOutletContext<User>();
 
-  const getData = async () => {
-    const user = await getUser();
-    const balance = await getBalance();
-
-    setUser(user);
-    setBalance(balance);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  return isLoading
-    ? <Loading />
-    : (
-      <main>
-        <section>
-          <h1>NG.CASH</h1>
-          <section>
-            <span>Saldo</span>
-            <h1>{`R$${balance.toFixed(2).replaceAll('.', ',')}`}</h1>
-            <button>Nova transaferência</button>
-          </section>
-          <section>
-            <h3>{user?.username}</h3>
-            <button>Sair</button>
-          </section>
+  return (
+    <main className="container mt-4">
+      <div className="row">
+        <section className="col-3">
+          <BalanceCard />
         </section>
-      </main>
-    );
+        <section className="col-9">
+          <TransactionsTable accountId={user.accountId} />
+        </section>
+      </div>
+    </main>
+  );
 }
 
 export default Home;
