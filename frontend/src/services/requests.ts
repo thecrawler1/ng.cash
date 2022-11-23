@@ -77,4 +77,6 @@ export async function validateToken(token: string | null): Promise<void> {
   const response = await api.post('/auth/token', { token });
 
   if (!response.data.isValid) throw new Error('Invalid token');
+
+  setToken(token);
 }
