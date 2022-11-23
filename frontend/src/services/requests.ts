@@ -51,18 +51,10 @@ export async function newAccount(username: string, password: string, confirmPass
   }
 }
 
-export async function getUser(): Promise<User | null> {
-  try {
-    const token = localStorage.getItem('token');
+export async function getUser(): Promise<User> {
+  const token = localStorage.getItem('token');
 
-    await validateToken(token);
-
-    return jwtDecode<User>(token!);
-  } catch (error) {
-    console.error(error);
-
-    return null;
-  }
+  return jwtDecode<User>(token!);
 }
 
 export async function getIsLoggedIn(): Promise<boolean> {
