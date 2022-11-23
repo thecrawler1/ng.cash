@@ -101,3 +101,18 @@ export async function getTransactions(startDateStr: string, endDateStr: string):
 
   return data;
 }
+
+export async function makeTransfer(destinationUsername: string, amount: number): Promise<{ success: boolean, errorMessage?: string }> {
+  try {
+    await api.post('/transactions', { destinationUsername, amount });
+
+    return { success: true };
+  } catch (error: any) {
+    const { messageCode, message } = getMessagesFromAxiosError(error);
+    const uiErrorMessage = getUIErrorMessage(messageCode);
+
+    console.error(messageCode, message);
+
+    return { success: false, errorMessage: uiErrorMessage };
+  }
+}
