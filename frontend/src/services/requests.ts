@@ -65,6 +65,20 @@ export async function getUser(): Promise<User | null> {
   }
 }
 
+export async function getIsLoggedIn(): Promise<boolean> {
+  try {
+    const token = localStorage.getItem('token');
+
+    await validateToken(token);
+
+    return true;
+  } catch (error) {
+    console.error(error);
+
+    return false;
+  }
+};
+
 export async function validateToken(token: string | null): Promise<void> {
   if (!token) throw new Error('Token not found');
 

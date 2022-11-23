@@ -1,10 +1,9 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
-import User from "./interfaces/User";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NewAccount from "./pages/NewAccount";
 import NotFound from "./pages/NotFound";
-import { getUser } from "./services/requests";
+import { getIsLoggedIn } from "./services/requests";
 
 export default createBrowserRouter([
   {
@@ -18,11 +17,9 @@ export default createBrowserRouter([
   {
     path: '*',
     loader: async () => {
-      const user: User | null = await getUser();
+      const isLoggedIn: boolean = await getIsLoggedIn();
 
-      if (!user) throw redirect('/login');
-
-      return user;
+      if (!isLoggedIn) throw redirect('/login');
     },
     children: [
       {
