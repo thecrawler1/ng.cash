@@ -1,7 +1,7 @@
 import { useState, MouseEventHandler } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from './Loading';
-import * as authenticator from '../services/authenticator';
+import * as requester from '../services/requests';
 
 function Login() {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ function Login() {
 
     setIsLoading(true);
 
-    const { success, errorMessage } = await authenticator.login(username, password);
+    const { success, errorMessage } = await requester.login(username, password);
 
     if (success) {
       navigate('/');

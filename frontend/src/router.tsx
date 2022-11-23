@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NewAccount from "./pages/NewAccount";
 import NotFound from "./pages/NotFound";
-import { getUser } from "./services/authenticator";
+import { getUser } from "./services/requests";
 
 export default createBrowserRouter([
   {

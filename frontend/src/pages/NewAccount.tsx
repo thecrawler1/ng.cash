@@ -1,7 +1,7 @@
 import { MouseEventHandler, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
-import * as authenticator from "../services/authenticator";
+import * as requester from "../services/requests";
 
 function NewAccount() {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ function NewAccount() {
 
     setIsLoading(true);
 
-    const { success, errorMessage } = await authenticator.newAccount(username, password, confirmPassword);
+    const { success, errorMessage } = await requester.newAccount(username, password, confirmPassword);
 
     if (success) {
       navigate('/');
