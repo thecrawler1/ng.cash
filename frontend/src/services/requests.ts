@@ -1,6 +1,8 @@
 import jwtDecode from 'jwt-decode';
+import moment from 'moment';
 import api, { setToken } from './api';
 import User from '../interfaces/User';
+import Transaction from '../interfaces/Transaction';
 import getUIErrorMessage from '../utils/getUIErrorMessage';
 
 function getMessagesFromAxiosError(error: any): { message?: string, messageCode?: string } {
@@ -85,4 +87,17 @@ export async function getBalance(): Promise<number> {
   const { data } = await api.get('/users/balance');
 
   return data.balance;
+}
+
+export async function getTransactions(startDateStr: string, endDateStr: string): Promise<Transaction[]> {
+  const momentStartDate = moment(startDateStr).startOf('day').utc();
+  const momentEndDate = moment(endDateStr).endOf('day').utc();
+
+  const startDate = momentStartDate.isValid() ? momentStartDate.format() : '';
+  const endDate = momentEndDate.isValid() ? momentEndDate.format() : '';
+
+  // const { data } = await api.get(`/transactions`);
+  const { data } = await api.get(`/transactions?startDate=${startDate}&endDate=${endDate}`);
+
+  return data;
 }
