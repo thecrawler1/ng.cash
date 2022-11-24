@@ -1,6 +1,6 @@
-# NG.CASH | Digital Wallet
+# NG.CASH Digital Wallet
 
-Desafio técnico da NG.CASH
+Desafio técnico da NG.CASH.
 
 ## Rodando a aplicação
 
