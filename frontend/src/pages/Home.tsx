@@ -7,12 +7,12 @@ function Home() {
   const user = useOutletContext<User>();
 
   return (
-    <main className="container mt-4">
+    <main className="container">
       <div className="row">
-        <section className="col-3">
+        <section className="col-lg-3 col-12 mt-4">
           <BalanceCard />
         </section>
-        <section className="col-9">
+        <section className="col-lg-9 col-12 mt-4">
           <TransactionsTable accountId={user.accountId} />
         </section>
       </div>

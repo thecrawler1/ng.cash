@@ -14,7 +14,7 @@ function Header({ username }: { username: string }) {
       <div className="container">
         <span className="navbar-brand"><strong>NG.CASH</strong></span>
         <div className="d-flex">
-          <span className="navbar-brand">{ `Bem-vindo(a), ${username}!` }</span>
+          <span className="navbar-brand d-none d-md-block">{ `Bem-vindo(a), ${username}!` }</span>
           <button className="btn btn-light" onClick={ logout }>Sair</button>
         </div>
       </div>
