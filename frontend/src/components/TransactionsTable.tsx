@@ -135,7 +135,7 @@ function TransactionsTable({ accountId }: { accountId: number }) {
                 {
                 filteredTransactions.map((transaction) => (
                   <tr key={transaction.id}>
-                    <td>{ moment(transaction.createdAt).format('DD/MM/YYYY à[s] H:mm') }</td>
+                    <td>{ moment(transaction.createdAt).format('DD/MM/YYYY à[s] HH:mm') }</td>
                     <td className={getTransactionStyle(transaction) + ' text-end'}>
                       {getTransactionType(transaction) === 'cashout' ? '-' : ''}
                       {formatCurrency(transaction.value)}
