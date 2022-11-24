@@ -1,6 +1,7 @@
 {
-  "name": "frontend",
+  "name": "ng.cash-frontend",
   "version": "0.1.0",
+  "description": "Front-end do desafio técnico da NG.CASH",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.3",
