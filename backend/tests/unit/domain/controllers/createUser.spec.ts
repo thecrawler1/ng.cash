@@ -7,7 +7,7 @@ import RequiredPayloadNotProvidedError from '../../../../src/domain/controllers/
 
 chai.use(chaiAsPromised);
 
-describe('Create user controlle', function () {
+describe('Create user controller', function () {
   const mockCreateUserService = new MockCreateUserService();
   const createUserController = new CreateUserController(mockCreateUserService);
 
@@ -22,7 +22,7 @@ describe('Create user controlle', function () {
     expect(result).to.be.deep.equal({ statusCode: 201, data: { token: 'fake_token' } });
   });
 
-  it('should thrown an erro when the username is not provided', async function () {
+  it('should thrown an error when the username is not provided', async function () {
     const request: IRequest = { payload: { password: 'Abc12345' }, params: {}, query: {} };
 
     await expect(createUserController.handle(request))
@@ -30,7 +30,7 @@ describe('Create user controlle', function () {
       .and.contain({ messageCode: 'REQUIRED_PAYLOAD_NOT_PROVIDED' });
   });
 
-  it('should thrown an erro when the password is not provided', async function () {
+  it('should thrown an error when the password is not provided', async function () {
     const request: IRequest = { payload: { username: 'username' }, params: {}, query: {} };
 
     await expect(createUserController.handle(request))
