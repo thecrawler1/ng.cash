@@ -4,7 +4,7 @@ import cors from 'cors';
 import 'express-async-errors';
 
 import ErrorMiddlewareAdapter from '@infrastructure/adapters/express/ErrorMiddlewareAdapter';
-import ErrorHandlerMiddleware from '@domain/middlewares/ErrorHandlerMiddleware';
+import ErrorHandlerMiddleware from '@core/middlewares/ErrorHandlerMiddleware';
 import sequelize from '@infrastructure/repositories/sequelize/database'
 import authenticatorRouter from './routers/authenticatorRouter';
 import userRouter from './routers/userRouter';

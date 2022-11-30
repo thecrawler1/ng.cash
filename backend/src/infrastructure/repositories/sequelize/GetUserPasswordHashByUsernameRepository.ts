@@ -1,5 +1,5 @@
-import Username from '@domain/entities/value-objects/username';
-import IGetUserPasswordHashByUsernameRepository from '@domain/interfaces/repositories/IGetUserPasswordHashByUsernameRepository';
+import Username from '@core/entities/value-objects/username';
+import IGetUserPasswordHashByUsernameRepository from '@core/interfaces/repositories/IGetUserPasswordHashByUsernameRepository';
 import UserModel from './database/models/User';
 import UserNotFoundError from './errors/UserNotFoundError';
 

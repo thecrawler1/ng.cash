@@ -1,5 +1,5 @@
-import ICheckIfUsernameIsBeingUsedRepository from '@domain/interfaces/repositories/ICheckIfUsernameIsBeingUsedRepository';
-import Username from '@domain/entities/value-objects/username';
+import ICheckIfUsernameIsBeingUsedRepository from '@core/interfaces/repositories/ICheckIfUsernameIsBeingUsedRepository';
+import Username from '@core/entities/value-objects/username';
 import UserModel from './database/models/User';
 
 export default class CheckIfUsernameIsBeingUsedRepository implements ICheckIfUsernameIsBeingUsedRepository {

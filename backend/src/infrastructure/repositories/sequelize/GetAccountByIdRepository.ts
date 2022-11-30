@@ -1,6 +1,6 @@
-import Account from '@domain/entities/Account';
-import Id from '@domain/entities/value-objects/id';
-import IGetAccountByIdRepository from '@domain/interfaces/repositories/IGetAccountByIdRepository';
+import Account from '@core/entities/Account';
+import Id from '@core/entities/value-objects/id';
+import IGetAccountByIdRepository from '@core/interfaces/repositories/IGetAccountByIdRepository';
 import AccountModel from './database/models/Account';
 import AccountNotFoundError from './errors/AccountNotFoundError';
 

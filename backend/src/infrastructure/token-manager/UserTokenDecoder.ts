@@ -1,7 +1,7 @@
 import { verify } from 'jsonwebtoken';
-import User from '@domain/entities/User';
-import UserDTO from '@domain/entities/dtos/UserDTO';
-import IUserTokenDecoder from '@domain/interfaces/token-manager/IUserTokenDecoder';
+import User from '@core/entities/User';
+import UserDTO from '@core/entities/dtos/UserDTO';
+import IUserTokenDecoder from '@core/interfaces/token-manager/IUserTokenDecoder';
 import InvalidTokenError from './errors/InvalidTokenError';
 
 export default class UserTokenDecoder implements IUserTokenDecoder {

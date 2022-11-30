@@ -1,4 +1,4 @@
-import UnauthorizedError from '@domain/errors/UnauthorizedError';
+import UnauthorizedError from '@core/errors/UnauthorizedError';
 
 export default class InvalidTokenError extends UnauthorizedError {
   constructor(message: string) {

@@ -1,8 +1,8 @@
-import MakeTransferController from '@domain/controllers/MakeTransferController';
+import MakeTransferController from '@core/controllers/MakeTransferController';
 import GetUserByUsernameRepository from '@infrastructure/repositories/sequelize/GetUserByUsernameRepository';
 import GetAccountByIdRepository from '@infrastructure/repositories/sequelize/GetAccountByIdRepository';
 import MakeTransferRepository from '@infrastructure/repositories/sequelize/MakeTransferRepository';
-import MakeTransferService from '@domain/services/MakeTransferService';
+import MakeTransferService from '@core/services/MakeTransferService';
 
 export default abstract class MakeTransferControllerFactory {
   static make(): MakeTransferController {

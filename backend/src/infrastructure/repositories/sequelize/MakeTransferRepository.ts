@@ -1,9 +1,9 @@
 import { Transaction as SequelizeTransaction } from 'sequelize';
-import Id from '@domain/entities/value-objects/id';
-import User from '@domain/entities/User';
-import Transaction from '@domain/entities/Transaction';
-import MonetaryValue from '@domain/entities/value-objects/monetary-value';
-import IMakeTransferRepository from '@domain/interfaces/repositories/IMakeTransferRepository';
+import Id from '@core/entities/value-objects/id';
+import User from '@core/entities/User';
+import Transaction from '@core/entities/Transaction';
+import MonetaryValue from '@core/entities/value-objects/monetary-value';
+import IMakeTransferRepository from '@core/interfaces/repositories/IMakeTransferRepository';
 import UserNotFoundError from './errors/UserNotFoundError';
 import UserModel from './database/models/User';
 import TransactionModel from './database/models/Transaction';

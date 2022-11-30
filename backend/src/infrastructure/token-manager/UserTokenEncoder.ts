@@ -1,6 +1,6 @@
 import { sign } from 'jsonwebtoken';
-import User from '@domain/entities/User';
-import IUserTokenEncoder, { TOKEN_EXPIRATION } from '@domain/interfaces/token-manager/IUserTokenEncoder';
+import User from '@core/entities/User';
+import IUserTokenEncoder, { TOKEN_EXPIRATION } from '@core/interfaces/token-manager/IUserTokenEncoder';
 import 'dotenv/config';
 
 export default class UserTokenEncoder implements IUserTokenEncoder {

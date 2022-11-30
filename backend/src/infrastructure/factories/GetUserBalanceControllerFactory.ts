@@ -1,5 +1,5 @@
-import GetUserBalanceController from '@domain/controllers/GetUserBalanceController';
-import GetUserBalanceService from '@domain/services/GetUserBalanceService';
+import GetUserBalanceController from '@core/controllers/GetUserBalanceController';
+import GetUserBalanceService from '@core/services/GetUserBalanceService';
 import GetAccountByIdRepository from '@infrastructure/repositories/sequelize/GetAccountByIdRepository';
 
 export default abstract class GetUserBalanceControllerFactory {

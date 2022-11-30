@@ -1,7 +1,7 @@
-import Transaction from '@domain/entities/Transaction';
-import Id from '@domain/entities/value-objects/id';
-import IGetTransactionsByAccountIdRepository from '@domain/interfaces/repositories/IGetTransactionsByAccountIdRepository';
-import { Filters, TransactionType } from '@domain/interfaces/services/IGetUserTransactionsService';
+import Transaction from '@core/entities/Transaction';
+import Id from '@core/entities/value-objects/id';
+import IGetTransactionsByAccountIdRepository from '@core/interfaces/repositories/IGetTransactionsByAccountIdRepository';
+import { Filters, TransactionType } from '@core/interfaces/services/IGetUserTransactionsService';
 import AccountModel from './database/models/Account';
 import TransactionModel from './database/models/Transaction';
 import AccountNotFoundError from './errors/AccountNotFoundError';

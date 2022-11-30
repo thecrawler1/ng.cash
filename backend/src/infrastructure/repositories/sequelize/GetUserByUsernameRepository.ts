@@ -1,6 +1,6 @@
-import User from '@domain/entities/User';
-import Username from '@domain/entities/value-objects/username';
-import IGetUserByUsernameRepository from '@domain/interfaces/repositories/IGetUserByUsernameRepository';
+import User from '@core/entities/User';
+import Username from '@core/entities/value-objects/username';
+import IGetUserByUsernameRepository from '@core/interfaces/repositories/IGetUserByUsernameRepository';
 import UserModel from './database/models/User';
 import UserNotFoundError from './errors/UserNotFoundError';
 

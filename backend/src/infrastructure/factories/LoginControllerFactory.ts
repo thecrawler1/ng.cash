@@ -1,9 +1,9 @@
-import LoginController from '@domain/controllers/LoginController';
+import LoginController from '@core/controllers/LoginController';
 import GetUserPasswordHashByUsernameRepository from '@infrastructure/repositories/sequelize/GetUserPasswordHashByUsernameRepository';
 import GetUserByUsernameRepository from '@infrastructure/repositories/sequelize/GetUserByUsernameRepository';
 import HashComparer from '@infrastructure/password-hash-manager/bcrypt/HashComparer';
 import UserTokenEncoder from '@infrastructure/token-manager/UserTokenEncoder';
-import LoginService from '@domain/services/LoginService';
+import LoginService from '@core/services/LoginService';
 
 export default abstract class LoginControllerFactory {
   static make(): LoginController {

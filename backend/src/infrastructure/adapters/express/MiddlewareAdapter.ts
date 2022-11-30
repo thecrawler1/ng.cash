@@ -1,7 +1,7 @@
 import { RequestHandler, Request, Response, NextFunction } from 'express';
-import IMiddleware from '@domain/interfaces/middleware/IMiddleware';
-import IRequest from '@domain/interfaces/middleware/IRequest';
-import IResponse from '@domain/interfaces/middleware/IResponse';
+import IMiddleware from '@core/interfaces/middleware/IMiddleware';
+import IRequest from '@core/interfaces/middleware/IRequest';
+import IResponse from '@core/interfaces/middleware/IResponse';
 
 export default class MiddlewareAdapter {
   static adapt(middleware: IMiddleware): RequestHandler {

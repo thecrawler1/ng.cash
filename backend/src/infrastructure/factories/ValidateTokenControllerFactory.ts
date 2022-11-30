@@ -1,5 +1,5 @@
-import ValidateTokenController from '@domain/controllers/ValidateTokenController';
-import ValidateTokenService from '@domain/services/ValidateTokenService';
+import ValidateTokenController from '@core/controllers/ValidateTokenController';
+import ValidateTokenService from '@core/services/ValidateTokenService';
 import UserTokenDecoder from '@infrastructure/token-manager/UserTokenDecoder';
 
 export default abstract class ValidateTokenControllerFactory {

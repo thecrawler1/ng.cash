@@ -1,5 +1,5 @@
-import GetUserTransactionsController from '@domain/controllers/GetUserTransactionsController';
-import GetUserTransactionsService from '@domain/services/GetUserTransactionsService';
+import GetUserTransactionsController from '@core/controllers/GetUserTransactionsController';
+import GetUserTransactionsService from '@core/services/GetUserTransactionsService';
 import GetTransactionByAccountIdRepository from '@infrastructure/repositories/sequelize/GetTransactionsByAccountIdRepository';
 
 export default abstract class GetUserTransactionsControllerFactory {

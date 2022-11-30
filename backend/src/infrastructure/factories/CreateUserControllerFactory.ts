@@ -1,5 +1,5 @@
-import CreateUserController from '@domain/controllers/CreateUserController';
-import CreateUserService from '@domain/services/CreateUserService';
+import CreateUserController from '@core/controllers/CreateUserController';
+import CreateUserService from '@core/services/CreateUserService';
 import HashGenerator from '@infrastructure/password-hash-manager/bcrypt/HashGenerator';
 import CheckIfUsernameIsBeingUsedRepository from '@infrastructure/repositories/sequelize/CheckIfUsernameIsBeingUsedRepository';
 import CreateUserAndAccountRepository from '@infrastructure/repositories/sequelize/CreateUserAndAccountRepository';

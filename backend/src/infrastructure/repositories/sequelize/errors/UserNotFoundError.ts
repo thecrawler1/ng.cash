@@ -1,4 +1,4 @@
-import NotFoundError from '@domain/errors/NotFoundError';
+import NotFoundError from '@core/errors/NotFoundError';
 
 export default class UserNotFoundError extends NotFoundError {
   constructor() {

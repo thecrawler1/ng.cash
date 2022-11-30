@@ -1,7 +1,7 @@
 import { Request, Response, RequestHandler } from 'express';
-import IController from '@domain/interfaces/controller/IController';
-import IRequest from '@domain/interfaces/controller/IRequest';
-import IResponse from '@domain/interfaces/controller/IResponse';
+import IController from '@core/interfaces/controller/IController';
+import IRequest from '@core/interfaces/controller/IRequest';
+import IResponse from '@core/interfaces/controller/IResponse';
 
 export default class RouteAdapter {
   static adapt(controller: IController): RequestHandler {

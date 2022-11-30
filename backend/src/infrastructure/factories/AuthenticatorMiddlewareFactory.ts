@@ -1,4 +1,4 @@
-import AuthenticatorMiddleware from '@domain/middlewares/AuthenticatorMiddleware';
+import AuthenticatorMiddleware from '@core/middlewares/AuthenticatorMiddleware';
 import UserTokenDecoder from '@infrastructure/token-manager/UserTokenDecoder';
 
 export default abstract class AuthenticatorMiddlewareFactory {

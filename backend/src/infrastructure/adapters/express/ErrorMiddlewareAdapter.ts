@@ -1,6 +1,6 @@
 import { Request, Response, ErrorRequestHandler, NextFunction } from 'express';
-import IErrorMiddleware from '@domain/interfaces/middleware/IErrorMiddleware';
-import IErrorResponse from '@domain/interfaces/middleware/IErrorResponse';
+import IErrorMiddleware from '@core/interfaces/middleware/IErrorMiddleware';
+import IErrorResponse from '@core/interfaces/middleware/IErrorResponse';
 
 export default class ErrorMiddlewareAdapter {
   static adapt(errorMiddleware: IErrorMiddleware): ErrorRequestHandler {
