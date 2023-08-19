@@ -4,7 +4,7 @@ Este repositório contém a minha solução para o desafio técnico proposto pel
 
 ## Tecnologias Utilizadas
 
-- **Frontend:** React, Bootstrap
+- **Frontend:** React, TypeScript, Bootstrap
 - **Backend:** Node.js, TypeScript
 - **Banco de Dados:** Sequelize, MySQL
 - **Outros:** Docker
