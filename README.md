@@ -33,7 +33,7 @@ Para executar o projeto localmente, siga as instruções abaixo:
 
 ## Executando os Testes
 
-A aplicação inclui testes unitários para a camada de domínio. Para executar os testes, utilize o seguinte comando dentro do contêiner do backend:
+A aplicação inclui testes unitários para a camada de domínio. Para executar os testes, utilize o seguinte:
 
 `docker exec app_backend npm run test`
 
