@@ -1,11 +1,11 @@
-import User from '../entities/User';
-import Password from '../entities/value-objects/password';
-import Username from '../entities/value-objects/username';
+import User from '@core/entities/User';
+import Password from '@core/entities/value-objects/password';
+import Username from '@core/entities/value-objects/username';
 import UsernameIsBeingUsedError from './errors/UsernameIsBeingUsedError';
-import ICreateUserAndAccountRepository from '../interfaces/repositories/ICreateUserAndAccountRepository';
-import ICreateUserService from '../interfaces/services/ICreateUserService';
+import ICreateUserAndAccountRepository from '@core/interfaces/repositories/ICreateUserAndAccountRepository';
+import ICreateUserService from '@core/interfaces/services/ICreateUserService';
 import IHashGenerator from '@core/interfaces/password-hash-manager/IHashGenerator';
-import ICheckIfUsernameIsBeingUsedRepository from '../interfaces/repositories/ICheckIfUsernameIsBeingUsedRepository';
+import ICheckIfUsernameIsBeingUsedRepository from '@core/interfaces/repositories/ICheckIfUsernameIsBeingUsedRepository';
 import IUserTokenEncoder from '@core/interfaces/token-manager/IUserTokenEncoder';
 
 export default class CreateUserService implements ICreateUserService {
