@@ -7,10 +7,10 @@ import AccountModel from './database/models/Account';
 import sequelize from './database';
 
 export default class CreateUserAndAccountRepository implements ICreateUserAndAccountRepository {
-  async perform(username: Username, passwordHash: string): Promise<User> {
+  async perform(username: Username, passwordHash: string, balance: number): Promise<User> {
     return sequelize.transaction(async (transaction) => {
       const accountModel: AccountModel = await AccountModel.create(
-        { balance: Account.INITIAL_BALANCE },
+        { balance },
         { transaction },
       );
       const userModel: UserModel = await UserModel.create(

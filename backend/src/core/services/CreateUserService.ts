@@ -1,4 +1,5 @@
 import User from '@core/entities/User';
+import Account from '@core/entities/Account';
 import Password from '@core/entities/value-objects/password';
 import Username from '@core/entities/value-objects/username';
 import UsernameIsBeingUsedError from './errors/UsernameIsBeingUsedError';
@@ -20,7 +21,7 @@ export default class CreateUserService implements ICreateUserService {
     await this.validateIfUsernameIsBeingUsed(username);
 
     const passwordHash: string = await this.hashGenerator.generate(password);
-    const user: User = await this.createUserAndAccount.perform(username, passwordHash);
+    const user: User = await this.createUserAndAccount.perform(username, passwordHash, Account.INITIAL_BALANCE);
     const token = this.userTokenEncoder.encode(user);
 
     return { token };
